@@ -22,14 +22,14 @@ func FizzBuzz(n int) {
 			continue
 		}
 		switch {
-		case i%3 != 0 && i%5 != 0:
-			output[i-1] = fmt.Sprint(i)
 		case i%3 == 0 && i%5 == 0:
 			output[i-1] = "Fizz Buzz"
 		case i%3 == 0:
 			output[i-1] = "Fizz"
 		case i%5 == 0:
 			output[i-1] = "Buzz"
+		default:
+			output[i-1] = fmt.Sprint(i)
 		}
 	}
 	fmt.Println(strings.Join(output, ", "))
