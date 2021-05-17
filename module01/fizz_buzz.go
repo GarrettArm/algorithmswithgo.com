@@ -22,7 +22,7 @@ func FizzBuzz(n int) {
 			continue
 		}
 		switch {
-		case i%3 == 0 && i%5 == 0:
+		case i%15 == 0:
 			output[i-1] = "Fizz Buzz"
 		case i%3 == 0:
 			output[i-1] = "Fizz"
