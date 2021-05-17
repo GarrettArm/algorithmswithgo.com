@@ -9,10 +9,10 @@ import "fmt"
 //   Reverse("alphabet") => "tebahpla"
 //
 func Reverse(word string) string {
-	if len(word) == 0 {
-		return ""
+	var rev string
+	for i := len(word); i > 0; i-- {
+		rev = fmt.Sprintf("%s%c", rev, word[i-1])
 	}
-	lastLetter := word[len(word)-1]
-	firstPart := word[:len(word)-1]
-	return fmt.Sprintf("%c%s", lastLetter, Reverse(firstPart))
+	return rev
+
 }
