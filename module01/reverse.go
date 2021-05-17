@@ -1,7 +1,5 @@
 package module01
 
-import "fmt"
-
 // Reverse will return the provided word in reverse
 // order. Eg:
 //
@@ -10,8 +8,8 @@ import "fmt"
 //
 func Reverse(word string) string {
 	var rev string
-	for i := len(word); i > 0; i-- {
-		rev = fmt.Sprintf("%s%c", rev, word[i-1])
+	for _, r := range word {
+		rev = string(r) + rev
 	}
 	return rev
 
