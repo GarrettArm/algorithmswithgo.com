@@ -21,13 +21,14 @@ func FizzBuzz(n int) {
 		if i == 0 {
 			continue
 		}
-		if i%3 != 0 && i%5 != 0 {
+		switch {
+		case i%3 != 0 && i%5 != 0:
 			output[i-1] = fmt.Sprint(i)
-		} else if i%3 == 0 && i%5 == 0 {
+		case i%3 == 0 && i%5 == 0:
 			output[i-1] = "Fizz Buzz"
-		} else if i%3 == 0 {
+		case i%3 == 0:
 			output[i-1] = "Fizz"
-		} else if i%5 == 0 {
+		case i%5 == 0:
 			output[i-1] = "Buzz"
 		}
 	}
