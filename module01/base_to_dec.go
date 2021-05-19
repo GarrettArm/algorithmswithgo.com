@@ -1,9 +1,8 @@
 package module01
 
 import (
-	"fmt"
 	"math"
-	"strconv"
+	"strings"
 )
 
 // BaseToDec takes in a number and the base it is currently
@@ -15,15 +14,13 @@ import (
 //   BaseToDec("1110", 2) => 14
 //
 func BaseToDec(value string, base int) int {
-	fmt.Printf("value: %v, base: %v\n", value, base)
 	var output int
-	valueStr := string(value)
-	for i := 0; i < len(valueStr); i++ {
-		x, _ := strconv.Atoi(string(valueStr[i]))
-		reversedPosition := len(valueStr) - i - 1
+	charset := "0123456789ABCDEF"
+	for i := 0; i < len(value); i++ {
+		x := strings.Index(charset, string(value[i]))
+		reversedPosition := len(value) - i - 1
 		multiplier := math.Pow(float64(base), float64(reversedPosition))
 		converted := float64(x) * multiplier
-		fmt.Println(i, base, x, reversedPosition, multiplier, converted)
 		output += int(converted)
 	}
 	return output
