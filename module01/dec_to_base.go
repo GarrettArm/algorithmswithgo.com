@@ -17,7 +17,6 @@ func DecToBase(dec, base int) string {
 		remainder := dec % base
 		result = string(charset[remainder]) + result
 		dec = dec / base
-
 	}
 	return result
 }
